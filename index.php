@@ -17,6 +17,7 @@
         <img src="Image/ajouter.png" alt="">
     </div>
     <div id="log">
+    
         <form action="checking.php" method="POST" id="formulaire">
             <input type="text" name="username">
             <input type="password" name="password">
